@@ -1,8 +1,8 @@
-#第二节 Spring Boot连接Mysql
-##1、新建一个Spring Boot项目，选择web、mysql支持.
-##2、数据源的配置（有两种方法）
-###方案一、使用Spring Boot默认配置
-使用Spring Boot默认配置，不需要创建dataSource和jdbcTemplate的Bean
+#第二节 Spring Boot连接Mysql<br>
+##1、新建一个Spring Boot项目，选择web、mysql支持.<br>
+##2、数据源的配置（有两种方法）<br>
+###方案一、使用Spring Boot默认配置<br>
+使用Spring Boot默认配置，不需要创建dataSource和jdbcTemplate的Bean<br>
 
 在application.properties中配置数据源信息
 
