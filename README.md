@@ -28,7 +28,7 @@ source.password = root
 通过Java Config创建dataSource和jdbcTemplate<br/>
 
 
-```
+```java
 @Configuration
 @EnableTransactionManagement
 @PropertySource(value = {"classpath:config/source.properties"})
@@ -66,7 +66,7 @@ DruidDataSource为com.alibaba.druid下面的实现类
 
 执行如下sql脚本<br/>
 
-```
+```sql
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`springboot_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
  
 USE `springboot_db`;
@@ -83,7 +83,7 @@ CREATE TABLE `t_author` (
 
 
 ## 4、新建domian包，并在下面建立Author实体<br/>
-```
+```java
 public class Author {
     private Long id;
     private String realName;
@@ -93,7 +93,7 @@ public class Author {
 ```
 ## 5、新建dao包，并在下面建立接口AuthorDao及其实现类AuthorDaoImpl<br/>
 
-```
+```java
 public interface AuthorDao {
     int add(Author author);
     int update(Author author);
@@ -102,7 +102,7 @@ public interface AuthorDao {
     List<Author> findAuthorList();
 }
 ```
-```
+```java
 @Repository
 public class AuthorDaoImpl implements AuthorDao {
  
@@ -148,7 +148,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
 ## 6、新建service包，并在其下建立AuthorService接口及其实现类AuthorServiceImpl.<br/>
 
-```
+```java
 public interface AuthorService {
     int add(Author author);
     int update(Author author);
@@ -158,7 +158,7 @@ public interface AuthorService {
 }
 ```
 
-```
+```java
 @Service("authorService")
 public class AuthorServiceImpl implements AuthorService {
     @Autowired
@@ -204,7 +204,7 @@ public class AuthorServiceImpl implements AuthorService {
 
 请求方法为method = RequestMethod.GET<br/>
 
-```
+```java
 @RestController
 @RequestMapping(value="/data/jdbc/author")
 public class AuthorController {
