@@ -1,16 +1,10 @@
-dsasdfasd
-==========
-#一级标题
-# 一级标题
-## 二级标题
-#sdfasdfads<br>
-#第二节 Spring Boot连接Mysql<br>
-##1、新建一个Spring Boot项目，选择web、mysql支持.<br>
-##2、数据源的配置（有两种方法）<br>
-###方案一、使用Spring Boot默认配置<br>
-使用Spring Boot默认配置，不需要创建dataSource和jdbcTemplate的Bean<br>
+# 第二节 Spring Boot连接Mysql
+## 1、新建一个Spring Boot项目，选择web、mysql支持.
+## 2、数据源的配置（有两种方法）
+### 方案一、使用Spring Boot默认配置<br>
+使用Spring Boot默认配置，不需要创建dataSource和jdbcTemplate的Bean
 
-在application.properties中配置数据源信息
+在application.properties中配置数据源信息<br>
 
 ```
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
@@ -20,9 +14,9 @@ spring.datasource.password=root
 
 ```
 
-方案二、手动创建
+方案二、手动创建<br>
 
-在src/main/resource/config/source.properties中配置如数据源信息
+在src/main/resource/config/source.properties中配置如数据源信息<br>
 
 ```
 source.driverClassName = com.mysql.jdbc.Driver
@@ -31,7 +25,7 @@ source.username = root
 source.password = root
 ```
 
-通过Java Config创建dataSource和jdbcTemplate
+通过Java Config创建dataSource和jdbcTemplate<br/>
 
 
 ```
@@ -68,9 +62,9 @@ DruidDataSource为com.alibaba.druid下面的实现类
 </font>
 
 
-##3、数据库的创建
+## 3、数据库的创建<br/>
 
-执行如下sql脚本
+执行如下sql脚本<br/>
 
 ```
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`springboot_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
@@ -88,7 +82,7 @@ CREATE TABLE `t_author` (
 ```
 
 
-##4、新建domian包，并在下面建立Author实体
+## 4、新建domian包，并在下面建立Author实体<br/>
 ```
 public class Author {
     private Long id;
@@ -97,7 +91,7 @@ public class Author {
     // SET和GET方法
 }
 ```
-##5、新建dao包，并在下面建立接口AuthorDao及其实现类AuthorDaoImpl
+## 5、新建dao包，并在下面建立接口AuthorDao及其实现类AuthorDaoImpl<br/>
 
 ```
 public interface AuthorDao {
@@ -152,7 +146,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
 <font color="red">注意：dao层的实现类的注解为@Repository</font>
 
-##6、新建service包，并在其下建立AuthorService接口及其实现类AuthorServiceImpl.
+## 6、新建service包，并在其下建立AuthorService接口及其实现类AuthorServiceImpl.<br/>
 
 ```
 public interface AuthorService {
@@ -197,18 +191,18 @@ public class AuthorServiceImpl implements AuthorService {
 }
 ```
 
-<font color="red">注意：service层实现类的注解为@Service</font>
+<font color="red">注意：service层实现类的注解为@Service</font><br/>
 
-##7、新建controller包及Controller类
+## 7、新建controller包及Controller类<br/>
 
-此时采用RESTful API 接口进行测试
-注意使用的方法及请求路径
+此时采用RESTful API 接口进行测试<br/>
+注意使用的方法及请求路径<br/>
 
-例如查询用户信息的方法
+例如查询用户信息的方法<br/>
 
-请求路径/data/jdbc/author/数字
+请求路径/data/jdbc/author/数字<br/>
 
-请求方法为method = RequestMethod.GET
+请求方法为method = RequestMethod.GET<br/>
 
 ```
 @RestController
@@ -291,10 +285,10 @@ public class AuthorController {
 }
 ```
 
-<font color="red">注意：使用restful的风格时，需要使用@RestController而不能是Controller
+<font color="red">注意：使用restful的风格时，需要使用@RestController而不能是Controller<br/>
 
-其中Application.java中可以有@RestController
+其中Application.java中可以有@RestController<br/>
 
-JsonObject包为fastJson的类
+JsonObject包为fastJson的类<br/>
 </font>
 
